@@ -1,0 +1,64 @@
+﻿<Window x:Class="TrainingProjectLab_2048.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TrainingProjectLab_2048"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid x:Name="mgrid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="New" Grid.Column="4" Grid.Row="0" HorizontalAlignment="Center" Height="50"  VerticalAlignment="Center" Width="120" FontSize="20" Foreground="White" Click="New_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="NewBorder" BorderThickness="1" Background="#FF44A8A4">
+                            <ContentPresenter Content="RESTART" VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter TargetName="NewBorder" Property="Background" Value="#FFBF0303"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed"  Value="True">
+                                <Setter TargetName="NewBorder" Property="Background" Value="#FFCD3D3D">
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="Back" Grid.Column="4" Grid.Row="1" Content ="Last Step" HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="120" FontSize="25" Foreground="White" Click="Back_Click" Background="#FF382C2C">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="BackBorder" BorderThickness="2" Background="#FF2FAEA8">
+                            <ContentPresenter Content="Last Step" VerticalAlignment="Center" HorizontalAlignment="Center"></ContentPresenter>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter TargetName="BackBorder" Property="Background" Value="Blue"></Setter>
+                            </Trigger>
+                            <Trigger Property="IsPressed"  Value="True">
+                                <Setter TargetName="BackBorder" Property="Background" Value="#FFE6ADE6"></Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Label Content="Score" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Center" Height="44" VerticalAlignment="Bottom" Width="99" FontSize="30" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+            <TextBlock x:Name="Score" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" TextWrapping="WrapWithOverflow" Text="0" VerticalAlignment="Top"  FontSize="35"/>
+            
+        </Grid>
+    </Grid>
+</Window>
