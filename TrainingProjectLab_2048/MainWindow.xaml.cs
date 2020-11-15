@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,14 +25,64 @@ namespace TrainingProjectLab_2048
             InitializeComponent();
         }
 
+        public void NewGame()
+        {
+
+        }
+        public void BackGame()
+        {
+
+        }
+
+
+
+        public void MoveUp()
+        {
+
+        }
+        public void MoveDown()
+        {
+
+        }
+        public void MoveLeft()
+        {
+
+        }
+        public void MoveRight()
+        {
+
+        }
+        private void Mgrid_KeyDown(object sender, KeyEventArgs e)
+        {
+            switch (e.Key)
+            {
+                case Key.Up:
+                    MoveUp();
+                    break;
+                case Key.Down:
+                    MoveDown();
+                    break;
+                case Key.Right:
+                    MoveRight();
+                    break;
+                case Key.Left:
+                    MoveLeft();
+                    break;
+                default:
+                    break;
+            }
+        }
+
         private void New_Click(object sender, RoutedEventArgs e)
         {
             //todo
+            NewGame();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
             //todo
+            BackGame();
         }
     }
 }
