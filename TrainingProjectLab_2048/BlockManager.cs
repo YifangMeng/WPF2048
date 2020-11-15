@@ -14,7 +14,6 @@ namespace TrainingProjectLab_2048
             return blockManager;
         }
 
-        //CountBlocksNumberZero
         public static int CountEmptyBlocks(Block[,] blks)
         {
             int count = 0;
