@@ -57,10 +57,5 @@ namespace TrainingProjectLab_2048
 
             }
         }
-        public static SolidColorBrush GetNoNumberColor()
-        {
-            return noNumber;
-        }
-
     }
 }
