@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,63 +7,59 @@ using System.Windows.Media;
 
 namespace TrainingProjectLab_2048
 {
-    class Block
+    public class Block
     {
         public int num = 0;
         public bool Combined = false;
-        public bool NewBlock = false;     //NewBlock
-        public enum Direction { Up = 1, Down = 2, Left = 3, Right = 4 }
+        public bool NewBlock = false;  
         //block colors 
-        private static readonly SolidColorBrush Tile2 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7fffd4"));
-        private static readonly SolidColorBrush Tile4 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7fff00"));
-        private static readonly SolidColorBrush Tile8 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#228b22"));
-        private static readonly SolidColorBrush Tile16 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8fbc8b"));
-        private static readonly SolidColorBrush Tile32 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#bdb76b"));
-        private static readonly SolidColorBrush Tile64 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f65e3b"));
-        private static readonly SolidColorBrush Tile128 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#edcf72"));
-        private static readonly SolidColorBrush Tile256 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#edcc61"));
-        private static readonly SolidColorBrush Tile512 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#adff2f"));
-        private static readonly SolidColorBrush Tile1024 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#20b2aa"));
-        private static readonly SolidColorBrush Tile2048 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#32cd32"));
-        private static readonly SolidColorBrush TileSuper = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66cdaa"));
+        private static SolidColorBrush number2 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7fffd4"));
+        private static SolidColorBrush number4 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7fff00"));
+        private static SolidColorBrush number8 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#228b22"));
+        private static SolidColorBrush number16 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8fbc8b"));
+        private static SolidColorBrush number32 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#bdb76b"));
+        private static SolidColorBrush number64 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f65e3b"));
+        private static SolidColorBrush number128 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#edcf72"));
+        private static SolidColorBrush number256 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#edcc61"));
+        private static SolidColorBrush number512 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#adff2f"));
+        private static SolidColorBrush number1024 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#20b2aa"));
+        private static SolidColorBrush number2048 = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#32cd32"));
+        private static SolidColorBrush noNumber = new SolidColorBrush((Color)ColorConverter.ConvertFromString("LightGray"));
 
-        private static readonly SolidColorBrush Border = new SolidColorBrush((Color)ColorConverter.ConvertFromString("Black"));
-        private static readonly SolidColorBrush NoneTitle = new SolidColorBrush((Color)ColorConverter.ConvertFromString("LightGray"));
-
-        public static SolidColorBrush GetTitleBlocksColor(Block blk)
+        public static SolidColorBrush GetNumberedBlocksColor(Block blk)
         {
             switch (blk.num)
             {
                 case 2:
-                    return Tile2;
+                    return number2;
                 case 4:
-                    return Tile4;
+                    return number4;
                 case 8:
-                    return Tile8;
+                    return number8;
                 case 16:
-                    return Tile16;
+                    return number16;
                 case 32:
-                    return Tile32;
+                    return number32;
                 case 64:
-                    return Tile64;
+                    return number64;
                 case 128:
-                    return Tile128;
+                    return number128;
                 case 256:
-                    return Tile256;
+                    return number256;
                 case 512:
-                    return Tile512;
+                    return number512;
                 case 1024:
-                    return Tile1024;
+                    return number1024;
                 case 2048:
-                    return Tile2048;
+                    return number2048;
                 default:
-                    return TileSuper;
+                    return noNumber;
 
             }
         }
-        public static SolidColorBrush GetBlocksNoneTitleColor()
+        public static SolidColorBrush GetNoNumberColor()
         {
-            return NoneTitle;
+            return noNumber;
         }
 
     }
