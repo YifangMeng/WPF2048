@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -84,18 +84,19 @@ namespace TrainingProjectLab_2048
             int begin = 0, end = 1;
             while (end <= 3 && begin <= 2)
             {
-                //0xxx
+                //find begin block with non-zero value
                 if (list[begin] == 0)
                 {
                     begin++;
                     end = begin + 1;
                 }
-                //x0xx
+                //once found non-zero begin, fix it and retrieve non-zero end
                 else if (list[end] == 0)
                 {
                     end++;
                 }
                 //two blocks with same value can be merged
+                //deal with position later
                 else
                 {
                     if (list[begin] == list[end]) 
@@ -115,6 +116,8 @@ namespace TrainingProjectLab_2048
                     }
                 }
             }
+            //deal with position after combination
+            //0x00 => x000
             int emptyBlockIndex = -1;
             for (int i = 0; i < 4; i++)
             {
